@@ -21,11 +21,11 @@
                 {% set counter = 1 %}
                 {% for key, value in top_5.items() %}
                     <tr class="border-b dark:border-neutral-500">
-                      <td class="whitespace-nowrap px-6 py-4 font-medium">{{ counter }}</td>
+                      <td class="whitespace-nowrap px-6 py-4 font-medium">{{ loop.index }}</td>
                       <td class="whitespace-nowrap px-6 py-4">{{ key }}</td>
                       <td class="whitespace-nowrap px-6 py-4">{{ value }}</td>
                     </tr>
-                    {% set counter = counter + 1%}
+                    {% set counter = counter + 1 %}
                 {% endfor %}
               </table>
             </div>
