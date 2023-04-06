@@ -5,7 +5,7 @@ from fb import user
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    return "Team 7"
+    return render_template('main.html')
 
 
 @app.route('/login', methods=['POST', 'GET'])
