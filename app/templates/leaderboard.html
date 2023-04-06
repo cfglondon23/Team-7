@@ -18,40 +18,15 @@
           <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
             <div class="overflow-hidden">
               <table class="min-w-full text-left text-sm font-light m-auto">
-                <thead class="border-b font-medium dark:border-neutral-500">
-                  <tr>
-                    <th scope="col" class="px-6 py-4">#</th>
-                    <th scope="col" class="px-6 py-4">User</th>
-                    <th scope="col" class="px-6 py-4">XP Value</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr class="border-b dark:border-neutral-500">
-                    <td class="whitespace-nowrap px-6 py-4 font-medium">1</td>
-                    <td class="whitespace-nowrap px-6 py-4">Mark</td>
-                    <td class="whitespace-nowrap px-6 py-4">100</td>
-                  </tr>
-                  <tr class="border-b dark:border-neutral-500">
-                    <td class="whitespace-nowrap px-6 py-4 font-medium">2</td>
-                    <td class="whitespace-nowrap px-6 py-4">Jacob</td>
-                    <td class="whitespace-nowrap px-6 py-4">90</td>
-                  </tr>
-                  <tr class="border-b dark:border-neutral-500">
-                    <td class="whitespace-nowrap px-6 py-4 font-medium">3</td>
-                    <td class="whitespace-nowrap px-6 py-4">Larry</td>
-                    <td class="whitespace-nowrap px-6 py-4">80</td>
-                  </tr>
-                  <tr class="border-b dark:border-neutral-500">
-                    <td class="whitespace-nowrap px-6 py-4 font-medium">4</td>
-                    <td class="whitespace-nowrap px-6 py-4">Ha</td>
-                    <td class="whitespace-nowrap px-6 py-4">70</td>
-                  </tr>
-                  <tr class="border-b dark:border-neutral-500">
-                    <td class="whitespace-nowrap px-6 py-4 font-medium">5</td>
-                    <td class="whitespace-nowrap px-6 py-4">John</td>
-                    <td class="whitespace-nowrap px-6 py-4">60</td>
-                  </tr>
-                </tbody>
+                {% set counter = 1 %}
+                {% for key, value in top_5.items() %}
+                    <tr class="border-b dark:border-neutral-500">
+                      <td class="whitespace-nowrap px-6 py-4 font-medium">{{ counter }}</td>
+                      <td class="whitespace-nowrap px-6 py-4">{{ key }}</td>
+                      <td class="whitespace-nowrap px-6 py-4">{{ value }}</td>
+                    </tr>
+                    {% set counter = counter + 1%}
+                {% endfor %}
               </table>
             </div>
           </div>
