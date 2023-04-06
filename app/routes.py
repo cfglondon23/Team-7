@@ -4,4 +4,4 @@ from app import app
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    return "Team 7"
+    return render_template('main.html')
