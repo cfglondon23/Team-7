@@ -1,7 +1,7 @@
 from flask import render_template, request, redirect, session
 from app import app
 from fb import user
-
+from app.leaderboard import get_top_5
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
@@ -38,4 +38,5 @@ def register():
 
 @app.route('/leaderboard', methods=['POST', 'GET'])
 def leaderboard():
-    return render_template('leaderboard.html')
+    info = get_top_5()
+    return render_template('leaderboard.html', top_5=info)
