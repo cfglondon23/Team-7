@@ -9,23 +9,22 @@
         <title>Team 7</title>
     </head>
     <body>
-    <div class="font-bold text-center py-8 ">
-        <p class="text-4xl">Leaderboard</p>
-        <p class="text-2xl">Top 5</p>
+    <div class="font-bold text-center py-8">
+        <p class="text-4xl pt-4">LEADERBOARD</p>
+        <p class="text-2xl pb-3">TOP 5</p>
+        <img src="/static/Ranking1.png">
     </div>
     <div class="flex flex-col">
         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
             <div class="overflow-hidden">
-              <table class="min-w-full text-left text-sm font-light m-auto">
-                {% set counter = 1 %}
+              <table class="px-5 border-separate w-3/4 text-left text-sm font-light m-auto" style="border-spacing: 0 1em;">
                 {% for key, value in top_5.items() %}
-                    <tr class="border-b dark:border-neutral-500">
-                      <td class="whitespace-nowrap px-6 py-4 font-medium">{{ loop.index }}</td>
-                      <td class="whitespace-nowrap px-6 py-4">{{ key }}</td>
-                      <td class="whitespace-nowrap px-6 py-4">{{ value }}</td>
+                    <tr class="mb-9" style="background-color: #F9BF77;">
+                      <td class="whitespace-nowrap px-6 py-4 text-xl">{{ loop.index }}</td>
+                      <td class="whitespace-nowrap px-6 py-4 text-xl">{{ key }}</td>
+                      <td class="whitespace-nowrap px-6 py-4 text-right text-xl font-bold">{{ value }}</td>
                     </tr>
-                    {% set counter = counter + 1 %}
                 {% endfor %}
               </table>
             </div>
