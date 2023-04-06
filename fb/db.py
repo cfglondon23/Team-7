@@ -14,3 +14,23 @@ def get_xp(email: str) -> Union[int,str]:
         return None
     else:
         return user
+
+def get_all_xp() -> list[str, int]:
+    """ Gets all users + their xp
+
+    Returns:
+        list[str, int]: email, xp
+    """
+    xp_by_user = {}
+    users = database.child("User").get().val()
+    
+    if not users:
+        return None
+    
+    for user in users:
+        xp = database.child("User").child(user).get().val()
+        xp_by_user[user] = xp
+    
+    return xp_by_user
+    
+
