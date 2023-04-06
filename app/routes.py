@@ -35,3 +35,7 @@ def register():
         return render_template('register.html', negative=False, message="Successfully registered")
     else:
         return render_template('register.html')
+
+@app.route('/leaderboard', methods=['POST', 'GET'])
+def leaderboard():
+    return render_template('leaderboard.html')
